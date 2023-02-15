@@ -75,7 +75,7 @@ button:hover {
 .watchlistContainer {
   height: 25rem;
   margin: 1rem;
-  background: var(--white);
+  background: var(--stone);
   border-radius: 8px;
   border: 2.5px solid var(--gray-400);
 
