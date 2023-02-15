@@ -5,8 +5,7 @@ export function HomeContainer() {
   return (
     <div className={styles.container}>
       <form className={styles.formContainer}>
-        <input type="text" placeholder="ABC-2124 - João Lucca" name="newCar" />
-        <input type="date" name="time" id="time" />
+        <input type="text" placeholder="ABC-2124 - Wellington Mangueira" name="newCar" />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
@@ -23,6 +22,7 @@ export function HomeContainer() {
           <p>Entrada</p>
           <p>Saída</p>
           <span>Valor</span>
+          <p className={styles.ref}>#</p>
         </header>
         <div className={styles.infoContainer}>
           <strong>ABC-1425</strong>
@@ -34,9 +34,8 @@ export function HomeContainer() {
             15/02/23 às 12:30:05
           </time>
           <span>R$ 30,00</span>
-          <button type="submit">
-            <CurrencyDollar size={20} />
-            Finalizar
+          <button type="submit" title="Pagar">
+            <CurrencyDollar size={35} />
           </button>
         </div>
       </div>

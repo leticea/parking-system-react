@@ -19,9 +19,12 @@
   --red-600: #ab222e;
   --red-700: #7a1921;
 
+  --yellow-500: #eab308;
+  --yellow-600: #ca8a04;
+/*
   --yellow-300: #fde047;
   --yellow-500: #FFCD00;
-  --yellow-600: #EAB308;
+  --yellow-600: #EAB308; */
 }
 
 * {
