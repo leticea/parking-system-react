@@ -63,6 +63,11 @@ button {
   font-weight: 600;
 }
 
+button:hover {
+  background: var(--yellow-300);
+}
+
+
 .watchlistContainer {
   height: 25rem;
   margin: 1rem;
