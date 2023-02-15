@@ -1,11 +1,30 @@
+import { ChangeEvent, FormEvent, useState } from "react";
 import { CurrencyDollar } from "phosphor-react";
+
 import styles from "./HomeContainer.module.css";
 
 export function HomeContainer() {
+  const [vehicles, setVehicles] = useState([]);
+  const [newVehicle, setNewVehicle] = useState("");
+
+  function handleInsertNewVehicle(event: FormEvent) {
+    event.preventDefault();
+
+    //newVehicle(event.target.value);
+
+
+  }
+
+  console.log(newVehicle);
+  
+  function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
+    setNewVehicle(event.target.value);
+  }
+
   return (
     <div className={styles.container}>
       <form className={styles.formContainer}>
-        <input type="text" placeholder="ABC-2124 - Wellington Mangueira" name="newCar" />
+        <input type="text" placeholder="ABC-2124 - Wellington Mangueira" name="vehicle" value={newVehicle} onChange={updateNewVehicleValue} />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
