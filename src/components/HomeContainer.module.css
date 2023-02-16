@@ -60,7 +60,7 @@ button {
   border-radius: 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: var(--yellow-500);
   cursor: pointer;
   color: var(--gray-500);

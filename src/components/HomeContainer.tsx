@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { CurrencyDollar } from "phosphor-react";
+import { CurrencyDollar, PlusCircle } from "phosphor-react";
 
 import styles from "./HomeContainer.module.css";
 
@@ -42,7 +42,9 @@ export function HomeContainer() {
           <option value="name">Nome</option>
           <option value="date">Data</option>
         </select>
-        <button type="submit">Adicionar</button>
+        <button type="submit">
+          Adicionar <PlusCircle />
+        </button>
       </form>
 
       <div className={styles.watchlistContainer}>
