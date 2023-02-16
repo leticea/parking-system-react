@@ -7,7 +7,7 @@ const generateID = () => Math.round(Math.random() * 1000);
 
 interface VehicleProps {
   id: typeof generateID;
-  description: string;
+  name: string;
 }
 
 export function HomeContainer() {
@@ -17,12 +17,12 @@ export function HomeContainer() {
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
 
-    const vehicleData = newVehicle.split('-')
+    const vehicleData = newVehicle.split('-');
 
     console.log(vehicleData);
   }
 
-  console.log(newVehicle);
+  //console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
     setNewVehicle(event.target.value);
@@ -33,10 +33,19 @@ export function HomeContainer() {
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
           type="text"
-          placeholder="ABC 2124 - Wellington Mangueira"
-          name="vehicle"
+          placeholder="ABC-2124"
+          name="vehiclePlate"
+          id="vehiclePlate"
           value={newVehicle}
           onChange={updateNewVehicleValue}
+        />
+        <input
+          type="text"
+          placeholder="Wellington Mangueira"
+          name="vehicleName"
+          id="vehicleName"
+          //value={newVehicle}
+          //onChange={updateNewVehicleValue}
         />
         <select>
           <option value="search">Pesquisar por</option>
