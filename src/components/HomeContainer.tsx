@@ -23,7 +23,7 @@ let registeredVehicles = [
     name: "João",
     entrance: new Date("2023-02-14T10:30:00Z"),
     exit: new Date("2023-02-14T11:30:00Z"),
-    amount: 200.0,
+    amount: 100.00,
   },
   {
     id: uuidv4(),
@@ -31,7 +31,7 @@ let registeredVehicles = [
     name: "Letícia",
     entrance: new Date("2023-02-15T11:30:00Z"),
     exit: new Date("2023-02-15T12:30:00Z"),
-    amount: 200.0,
+    amount: 150.00,
   },
   {
     id: uuidv4(),
@@ -39,7 +39,7 @@ let registeredVehicles = [
     name: "Maria",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.0,
+    amount: 160.00,
   },
   {
     id: uuidv4(),
@@ -47,7 +47,7 @@ let registeredVehicles = [
     name: "Maria",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.0,
+    amount: 180.00,
   },
   {
     id: uuidv4(),
@@ -55,7 +55,7 @@ let registeredVehicles = [
     name: "Maria",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.0,
+    amount: 195.00,
   },
   {
     id: uuidv4(),
@@ -63,7 +63,7 @@ let registeredVehicles = [
     name: "Maria",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.0,
+    amount: 200.00,
   },
 ];
 
@@ -84,7 +84,7 @@ export function HomeContainer() {
         name: newVehicle,
         entrance: new Date(),
         exit: new Date(),
-        amount: 200.0,
+        amount: 200.00,
       },
     ];
 

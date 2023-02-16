@@ -24,6 +24,8 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
     locale: ptBR,
   });
 
+  const amountFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount)
+
   return (
     <div className={styles.dataContainer}>
       <strong>{plate}</strong>
@@ -34,7 +36,7 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
       <time
         dateTime={exit.toISOString()}
       >{exitDateFormatted}</time>
-      <span>{amount}</span>
+      <span>{amountFormatted}</span>
       <button type="submit" title="Pagar">
         <CurrencyDollar size={35} />
       </button>
