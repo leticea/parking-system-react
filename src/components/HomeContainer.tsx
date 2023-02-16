@@ -17,7 +17,9 @@ export function HomeContainer() {
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
 
-    console.log("foi");
+    const vehicleData = newVehicle.split('-')
+
+    console.log(vehicleData);
   }
 
   console.log(newVehicle);
@@ -31,7 +33,7 @@ export function HomeContainer() {
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
           type="text"
-          placeholder="ABC-2124 - Wellington Mangueira"
+          placeholder="ABC 2124 - Wellington Mangueira"
           name="vehicle"
           value={newVehicle}
           onChange={updateNewVehicleValue}
