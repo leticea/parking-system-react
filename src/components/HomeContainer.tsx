@@ -12,7 +12,7 @@ export interface VehiclesProps {
   name: string;
   entrance: Date;
   exit: Date;
-  money: number;
+  amount: number;
 }
 
 let registeredVehicles = [
@@ -20,25 +20,25 @@ let registeredVehicles = [
     id: uuidv4(),
     plate: "ABC-2526",
     name: "João",
-    entrance: new Date("2023-02-15T10:30:00Z"),
-    exit: new Date("2023-02-15T11:30:00Z"),
-    money: 200.00
+    entrance: new Date("2023-02-14T10:30:00Z"),
+    exit: new Date("2023-02-14T11:30:00Z"),
+    amount: 200.00
   },
   {
     id: uuidv4(),
     plate: "ADC-3035",
     name: "Letícia",
-    entrance: new Date("2023-02-16T11:30:00Z"),
-    exit: new Date("2023-02-16T12:30:00Z"),
-    money: 200.00
+    entrance: new Date("2023-02-15T11:30:00Z"),
+    exit: new Date("2023-02-15T12:30:00Z"),
+    amount: 200.00
   },
   {
     id: uuidv4(),
     plate: "AFG-2026",
     name: "Maria",
-    entrance: new Date("2023-02-17T14:30:00Z"),
-    exit: new Date("2023-02-17T15:30:00Z"),
-    money: 200.00
+    entrance: new Date("2023-02-16T14:30:00Z"),
+    exit: new Date("2023-02-16T15:30:00Z"),
+    amount: 200.00
   },
 ];
 
@@ -59,7 +59,7 @@ export function HomeContainer() {
         name: newVehicle,
         entrance: new Date(),
         exit: new Date(),
-        money: 200.00
+        amount: 200.00
       },
     ];
 
