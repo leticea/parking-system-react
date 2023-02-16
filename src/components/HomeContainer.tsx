@@ -1,34 +1,55 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { CurrencyDollar, PlusCircle } from "phosphor-react";
-
 import styles from "./HomeContainer.module.css";
+import { v4 as uuidv4} from "uuid";
+import { RegisteredVehicles } from "./RegisteredVehicles";
 
-const generateID = () => Math.round(Math.random() * 1000);
 
-interface VehicleProps {
-  id: typeof generateID;
-  name: string;
-}
+// interface VehicleProps {
+//   id:;
+//   name: string;
+// }
+
+let registeredVehicles = [
+  {
+    id : uuidv4(),
+    plate: "ABC-2526",
+    name: "Letícia",
+    entrance: "11:30hs",
+    exit: "12:30hs",
+  },
+  {
+    id : uuidv4(),
+    plate: "ADC-3035",
+    name: "Letícia",
+    entrance: "09:30hs",
+    exit: "12:30hs",
+  },
+  {
+    id : uuidv4(),
+    plate: "AFG-2026",
+    name: "Letícia",
+    entrance: "10:30hs",
+    exit: "11:30hs",
+  }
+]
 
 export function HomeContainer() {
   const [vehicles, setVehicles] = useState([]);
-  const [newVehiclePlate, setNewVehiclePlate] = useState("");
-  const [newVehicleOwnerName, setNewVehicleOwnerName] = useState("");
+  const [newVehicle, setNewVehicle] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
 
-    console.log("foi")
+    const vehicleData = newVehicle.split('-');
+
+    console.log(registeredVehicles);
   }
 
-  console.log(newVehiclePlate);
-  //console.log(newVehicleOwnerName);
+  console.log(newVehicle);
 
-  function updateNewVehiclePlateValue(event: ChangeEvent<HTMLInputElement>) {
-    setNewVehiclePlate(event.target.value);
-  }
-  function updateNewVehicleOwnerValue(event: ChangeEvent<HTMLInputElement>) {
-    setNewVehicleOwnerName(event.target.value);
+  function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
+    setNewVehicle(event.target.value);
   }
 
   return (
@@ -36,19 +57,10 @@ export function HomeContainer() {
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
           type="text"
-          placeholder="ABC-2124"
-          name="vehiclePlate"
-          id="vehiclePlate"
-          value={newVehiclePlate}
-          onChange={updateNewVehiclePlateValue}
-        />
-        <input
-          type="text"
-          placeholder="Wellington Mangueira"
-          name="vehicleName"
-          id="vehicleName"
-          value={newVehicleOwnerName}
-          onChange={updateNewVehicleOwnerValue}
+          placeholder="ABC-2124 - Wellington Mangueira"
+          name="newVehicle"
+          value={newVehicle}
+          onChange={updateNewVehicleValue}
         />
         <select>
           <option value="search">Pesquisar por</option>
@@ -88,3 +100,7 @@ export function HomeContainer() {
     </div>
   );
 }
+function uuid() {
+  throw new Error("Function not implemented.");
+}
+
