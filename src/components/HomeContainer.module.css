@@ -74,8 +74,8 @@ button:hover {
 }
 
 .watchlistContainer {
-  height: 25rem;
-  margin: 2rem;
+  min-height: 25rem;
+  margin: 1rem;
   background: var(--stone);
   border-radius: 8px;
   border: 2.5px solid var(--gray-400);
@@ -103,11 +103,14 @@ button:hover {
 }
 
 .infoContainer {
+  max-height: 300px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   font-size: 1.2rem;
+  overflow-x: hidden;
+  //overflow-y: scroll;
 
   //border: 1px solid red;
 }

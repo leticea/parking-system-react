@@ -6,6 +6,7 @@ import { RegisteredVehicle } from "./RegisteredVehicle";
 import { PlusCircle } from "phosphor-react";
 import styles from "./HomeContainer.module.css";
 
+
 export interface VehiclesProps {
   id: string;
   plate: string;
@@ -22,7 +23,7 @@ let registeredVehicles = [
     name: "João",
     entrance: new Date("2023-02-14T10:30:00Z"),
     exit: new Date("2023-02-14T11:30:00Z"),
-    amount: 200.00
+    amount: 200.0,
   },
   {
     id: uuidv4(),
@@ -30,7 +31,7 @@ let registeredVehicles = [
     name: "Letícia",
     entrance: new Date("2023-02-15T11:30:00Z"),
     exit: new Date("2023-02-15T12:30:00Z"),
-    amount: 200.00
+    amount: 200.0,
   },
   {
     id: uuidv4(),
@@ -38,7 +39,31 @@ let registeredVehicles = [
     name: "Maria",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.00
+    amount: 200.0,
+  },
+  {
+    id: uuidv4(),
+    plate: "AFG-2026",
+    name: "Maria",
+    entrance: new Date("2023-02-16T14:30:00Z"),
+    exit: new Date("2023-02-16T15:30:00Z"),
+    amount: 200.0,
+  },
+  {
+    id: uuidv4(),
+    plate: "AFG-2026",
+    name: "Maria",
+    entrance: new Date("2023-02-16T14:30:00Z"),
+    exit: new Date("2023-02-16T15:30:00Z"),
+    amount: 200.0,
+  },
+  {
+    id: uuidv4(),
+    plate: "AFG-2026",
+    name: "Maria",
+    entrance: new Date("2023-02-16T14:30:00Z"),
+    exit: new Date("2023-02-16T15:30:00Z"),
+    amount: 200.0,
   },
 ];
 
@@ -59,7 +84,7 @@ export function HomeContainer() {
         name: newVehicle,
         entrance: new Date(),
         exit: new Date(),
-        amount: 200.00
+        amount: 200.0,
       },
     ];
 
@@ -108,8 +133,8 @@ export function HomeContainer() {
         </header>
 
         <div className={styles.infoContainer}>
-          {vehicles.map(vehicle => {
-            return <RegisteredVehicle vehicle={vehicle} key={vehicle.id} />
+          {vehicles.map((vehicle) => {
+            return <RegisteredVehicle vehicle={vehicle} key={vehicle.id} />;
           })}
         </div>
       </div>
