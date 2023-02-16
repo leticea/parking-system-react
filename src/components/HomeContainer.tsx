@@ -6,7 +6,7 @@ import styles from "./HomeContainer.module.css";
 const generateID = () => Math.round(Math.random() * 1000);
 
 interface VehicleProps {
-  id: number;
+  id: typeof generateID;
   description: string;
 }
 
