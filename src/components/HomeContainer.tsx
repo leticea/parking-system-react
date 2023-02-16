@@ -1,10 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { v4 as uuidv4} from "uuid";
+
+import { RegisteredVehicle } from "./RegisteredVehicle";
+
 import { CurrencyDollar, PlusCircle } from "phosphor-react";
 import styles from "./HomeContainer.module.css";
-import { v4 as uuidv4} from "uuid";
-import { RegisteredVehicles } from "./RegisteredVehicles";
 
-interface VehicleProps {
+export interface VehiclesProps {
   id: string;
   plate: string;
   name: string;
@@ -37,13 +39,28 @@ let registeredVehicles = [
 ]
 
 export function HomeContainer() {
-  const [vehicles, setVehicles] = useState<VehicleProps[]>(registeredVehicles);
+  const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
 
-    const vehicleData = newVehicle.split('-');
+    setVehicles(vehicles);
+
+    const newVehicles = [
+      ...vehicles,
+      {
+        id: uuidv4(),
+        plate: newVehicle,
+        name: newVehicle,
+        entrance: Date,
+        exit: Date
+      }
+    ]
+
+    setVehicles(newVehicles);
+    setNewVehicle("");
+    //const vehicleData = newVehicle.split('-');
 
     console.log(registeredVehicles);
   }
@@ -84,25 +101,24 @@ export function HomeContainer() {
           <span>Valor</span>
           <p className={styles.ref}>#</p>
         </header>
+
         <div className={styles.infoContainer}>
-          <strong>ABC-1425</strong>
-          <p>Letícia Mangueira</p>
-          <time title="15 de fevereiro de 2023" dateTime="2023-02-15 11:30:02">
-            15/02/23 às 11:30:01
-          </time>
-          <time title="15 de fevereiro de 2023" dateTime="2023-02-15 12:30:01">
-            15/02/23 às 12:30:05
-          </time>
-          <span>R$ 30,00</span>
+          {vehicles.map(vehicle => {
+            return (
+              <RegisteredVehicle
+                key={vehicle.id}
+                vehicle={vehicle}
+               />
+            )
+          })}
           <button type="submit" title="Pagar">
             <CurrencyDollar size={35} />
           </button>
         </div>
+
       </div>
     </div>
   );
 }
-function uuid() {
-  throw new Error("Function not implemented.");
-}
+
 
