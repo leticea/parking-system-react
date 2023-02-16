@@ -1,9 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { v4 as uuidv4} from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 import { RegisteredVehicle } from "./RegisteredVehicle";
 
-import { CurrencyDollar, PlusCircle } from "phosphor-react";
+import { PlusCircle } from "phosphor-react";
 import styles from "./HomeContainer.module.css";
 
 export interface VehiclesProps {
@@ -12,31 +12,35 @@ export interface VehiclesProps {
   name: string;
   entrance: Date;
   exit: Date;
- }
+  money: number;
+}
 
 let registeredVehicles = [
   {
-    id : uuidv4(),
+    id: uuidv4(),
     plate: "ABC-2526",
     name: "João",
     entrance: new Date("2023-02-15T10:30:00Z"),
     exit: new Date("2023-02-15T11:30:00Z"),
+    money: 200.00
   },
   {
-    id : uuidv4(),
+    id: uuidv4(),
     plate: "ADC-3035",
     name: "Letícia",
     entrance: new Date("2023-02-16T11:30:00Z"),
     exit: new Date("2023-02-16T12:30:00Z"),
+    money: 200.00
   },
   {
-    id : uuidv4(),
+    id: uuidv4(),
     plate: "AFG-2026",
     name: "Maria",
     entrance: new Date("2023-02-17T14:30:00Z"),
     exit: new Date("2023-02-17T15:30:00Z"),
-  }
-]
+    money: 200.00
+  },
+];
 
 export function HomeContainer() {
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
@@ -53,19 +57,20 @@ export function HomeContainer() {
         id: uuidv4(),
         plate: newVehicle,
         name: newVehicle,
-        entrance: Date,
-        exit: Date
-      }
-    ]
+        entrance: new Date(),
+        exit: new Date(),
+        money: 200.00
+      },
+    ];
 
     setVehicles(newVehicles);
     setNewVehicle("");
     //const vehicleData = newVehicle.split('-');
 
-    console.log(registeredVehicles);
+    console.log(newVehicles);
   }
 
-  console.log(newVehicle);
+  //console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
     setNewVehicle(event.target.value);
@@ -104,21 +109,10 @@ export function HomeContainer() {
 
         <div className={styles.infoContainer}>
           {vehicles.map(vehicle => {
-            return (
-              <RegisteredVehicle
-                key={vehicle.id}
-                vehicle={vehicle}
-               />
-            )
+            return <RegisteredVehicle vehicle={vehicle} key={vehicle.id} />
           })}
-          <button type="submit" title="Pagar">
-            <CurrencyDollar size={35} />
-          </button>
         </div>
-
       </div>
     </div>
   );
 }
-
-
