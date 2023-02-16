@@ -12,20 +12,23 @@ interface VehicleProps {
 
 export function HomeContainer() {
   const [vehicles, setVehicles] = useState([]);
-  const [newVehicle, setNewVehicle] = useState("");
+  const [newVehiclePlate, setNewVehiclePlate] = useState("");
+  const [newVehicleOwnerName, setNewVehicleOwnerName] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
 
-    const vehicleData = newVehicle.split('-');
-
-    console.log(vehicleData);
+    console.log("foi")
   }
 
-  //console.log(newVehicle);
+  console.log(newVehiclePlate);
+  //console.log(newVehicleOwnerName);
 
-  function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
-    setNewVehicle(event.target.value);
+  function updateNewVehiclePlateValue(event: ChangeEvent<HTMLInputElement>) {
+    setNewVehiclePlate(event.target.value);
+  }
+  function updateNewVehicleOwnerValue(event: ChangeEvent<HTMLInputElement>) {
+    setNewVehicleOwnerName(event.target.value);
   }
 
   return (
@@ -36,16 +39,16 @@ export function HomeContainer() {
           placeholder="ABC-2124"
           name="vehiclePlate"
           id="vehiclePlate"
-          value={newVehicle}
-          onChange={updateNewVehicleValue}
+          value={newVehiclePlate}
+          onChange={updateNewVehiclePlateValue}
         />
         <input
           type="text"
           placeholder="Wellington Mangueira"
           name="vehicleName"
           id="vehicleName"
-          //value={newVehicle}
-          //onChange={updateNewVehicleValue}
+          value={newVehicleOwnerName}
+          onChange={updateNewVehicleOwnerValue}
         />
         <select>
           <option value="search">Pesquisar por</option>
