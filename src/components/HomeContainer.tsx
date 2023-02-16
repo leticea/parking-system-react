@@ -4,38 +4,40 @@ import styles from "./HomeContainer.module.css";
 import { v4 as uuidv4} from "uuid";
 import { RegisteredVehicles } from "./RegisteredVehicles";
 
-
-// interface VehicleProps {
-//   id:;
-//   name: string;
-// }
+interface VehicleProps {
+  id: string;
+  plate: string;
+  name: string;
+  entrance: Date;
+  exit: Date;
+ }
 
 let registeredVehicles = [
   {
     id : uuidv4(),
     plate: "ABC-2526",
-    name: "Letícia",
-    entrance: "11:30hs",
-    exit: "12:30hs",
+    name: "João",
+    entrance: new Date("2023-02-15T10:30:00Z"),
+    exit: new Date("2023-02-15T11:30:00Z"),
   },
   {
     id : uuidv4(),
     plate: "ADC-3035",
     name: "Letícia",
-    entrance: "09:30hs",
-    exit: "12:30hs",
+    entrance: new Date("2023-02-16T11:30:00Z"),
+    exit: new Date("2023-02-16T12:30:00Z"),
   },
   {
     id : uuidv4(),
     plate: "AFG-2026",
-    name: "Letícia",
-    entrance: "10:30hs",
-    exit: "11:30hs",
+    name: "Maria",
+    entrance: new Date("2023-02-17T14:30:00Z"),
+    exit: new Date("2023-02-17T15:30:00Z"),
   }
 ]
 
 export function HomeContainer() {
-  const [vehicles, setVehicles] = useState([]);
+  const [vehicles, setVehicles] = useState<VehicleProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
