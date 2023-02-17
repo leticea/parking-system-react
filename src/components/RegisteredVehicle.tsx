@@ -12,7 +12,8 @@ interface VehicleProps {
 
 export function RegisteredVehicle({ vehicle }: VehicleProps) {
   const [isFinished] = useState(vehicle.isFinished);
-  const [checked, setChecked] = useState(isFinished);
+  const [finished, setFinished] = useState(isFinished);
+  const [inProgress, setInProgress] = useState(isFinished);
 
   //console.log(vehicle);
 
@@ -32,7 +33,7 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
 
   return (
     <div className={styles.dataContainer}>
-      <strong>{plate}</strong>
+      <strong className={finished ? styles.finished : styles.inProgress} >{plate}</strong>
       <p>{name}</p>
       <time className={styles.entrance} dateTime={entrance.toISOString()}>
         {entranceDateFormatted}

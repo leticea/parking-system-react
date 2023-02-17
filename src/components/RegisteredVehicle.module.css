@@ -38,16 +38,10 @@
   //border: 1px solid red;
 }
 
-.dataContainer .status {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.finished {
+  background: red;
+}
 
-  &::before {
-    content: '';
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 999px;
-    background: var(--green-500);
-  }
+.inProgress {
+  background: var(--green-500);
 }
