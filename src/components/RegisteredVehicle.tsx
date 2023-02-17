@@ -4,15 +4,19 @@ import styles from "./RegisteredVehicle.module.css";
 
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from "date-fns";
+import { useState } from "react";
 
 interface VehicleProps {
   vehicle: VehiclesProps;
 }
 
 export function RegisteredVehicle({ vehicle }: VehicleProps) {
-  console.log(vehicle);
+  const [isFinished] = useState(vehicle.isFinished);
+  const [checked, setChecked] = useState(isFinished);
 
-  const { id, plate, name, entrance, exit, amount, finished } = vehicle;
+  //console.log(vehicle);
+
+  const { id, plate, name, entrance, exit, amount } = vehicle;
 
   const entranceDateFormatted = format(entrance, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
@@ -24,7 +28,7 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
     locale: ptBR,
   });
 
-  const amountFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount)
+  const amountFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount);
 
   return (
     <div className={styles.dataContainer}>
