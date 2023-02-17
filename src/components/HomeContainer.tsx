@@ -109,6 +109,14 @@ export function HomeContainer() {
     setNewVehicle(event.target.value);
   }
 
+  function removeVehicle(id: string) {
+    const vehiclesInProgress = vehicles.filter((vehicle) => {
+      return vehicle.id !== id;
+    });
+
+    setVehicles(vehiclesInProgress);
+  }
+
   return (
     <div className={styles.container}>
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
@@ -142,7 +150,7 @@ export function HomeContainer() {
 
         <div className={styles.infoContainer}>
           {vehicles.map((vehicle) => {
-            return <RegisteredVehicle vehicle={vehicle} key={vehicle.id} />;
+            return <RegisteredVehicle vehicle={vehicle} removeVehicle={removeVehicle} key={vehicle.id} />;
           })}
         </div>
       </div>

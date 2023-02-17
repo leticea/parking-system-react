@@ -8,12 +8,19 @@ import { useState } from "react";
 
 interface VehicleProps {
   vehicle: VehiclesProps;
+  removeVehicle: (id: string) => void;
 }
 
-export function RegisteredVehicle({ vehicle }: VehicleProps) {
+export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
   const [isFinished] = useState(vehicle.isFinished);
   const [finished, setFinished] = useState(isFinished);
   const [inProgress, setInProgress] = useState(isFinished);
+
+  function handleRemoveVehicle(id: string) {
+    removeVehicle(id);
+
+    console.log(handleRemoveVehicle)
+  }
 
   //console.log(vehicle);
 
@@ -43,7 +50,7 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
       </time>
       <span>{amountFormatted}</span>
       <button type="submit" title="Pagar">
-        <CurrencyDollar size={35} />
+        <CurrencyDollar size={35} onClick={() => handleRemoveVehicle(vehicle.id)} />
       </button>
     </div>
   );
