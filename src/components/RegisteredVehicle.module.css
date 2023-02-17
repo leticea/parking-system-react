@@ -7,7 +7,9 @@
   font-size: 1rem;
   margin: 0.3rem;
 
-  border: 1px solid red;
+  border-bottom: 2px solid var(--gray-400);
+
+  //border: 1px solid red;
 }
 
 .dataContainer p {

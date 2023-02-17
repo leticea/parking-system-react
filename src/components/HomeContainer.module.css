@@ -103,7 +103,7 @@ button:hover {
 }
 
 .infoContainer {
-  max-height: 21rem;
+  max-height: 20rem;
   display: flex;
   align-items: center;
   flex-direction: column;
