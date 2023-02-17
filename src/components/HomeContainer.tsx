@@ -6,7 +6,6 @@ import { RegisteredVehicle } from "./RegisteredVehicle";
 import { PlusCircle } from "phosphor-react";
 import styles from "./HomeContainer.module.css";
 
-
 export interface VehiclesProps {
   id: string;
   plate: string;
@@ -23,7 +22,7 @@ let registeredVehicles = [
     name: "João Mangueira",
     entrance: new Date("2023-02-14T10:30:00Z"),
     exit: new Date("2023-02-14T11:30:00Z"),
-    amount: 100.00,
+    amount: 100.0,
   },
   {
     id: uuidv4(),
@@ -31,7 +30,7 @@ let registeredVehicles = [
     name: "Letícia Nascimento",
     entrance: new Date("2023-02-15T11:30:00Z"),
     exit: new Date("2023-02-15T12:30:00Z"),
-    amount: 150.00,
+    amount: 150.0,
   },
   {
     id: uuidv4(),
@@ -39,7 +38,7 @@ let registeredVehicles = [
     name: "Maria Pereira",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 160.00,
+    amount: 160.0,
   },
   {
     id: uuidv4(),
@@ -47,7 +46,7 @@ let registeredVehicles = [
     name: "José Roberto",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 180.00,
+    amount: 180.0,
   },
   {
     id: uuidv4(),
@@ -55,7 +54,7 @@ let registeredVehicles = [
     name: "Bruna Gonçalves",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 195.00,
+    amount: 195.0,
   },
   {
     id: uuidv4(),
@@ -63,7 +62,7 @@ let registeredVehicles = [
     name: "Gustavo Oliveira",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.00,
+    amount: 200.0,
   },
 ];
 
@@ -84,7 +83,7 @@ export function HomeContainer() {
         name: newVehicle,
         entrance: new Date(),
         exit: new Date(),
-        amount: 200.00,
+        amount: 200.0,
       },
     ];
 
@@ -121,23 +120,22 @@ export function HomeContainer() {
           Adicionar <PlusCircle />
         </button>
       </form>
-
-      <div className={styles.watchlistContainer}>
-        <header>
-          <strong>Placa</strong>
-          <p>Nome</p>
-          <p>Entrada</p>
-          <p>Saída</p>
-          <span>Valor</span>
-          <p className={styles.ref}>#</p>
-        </header>
-
-        <div className={styles.infoContainer}>
+      <table>
+        <thead>
+          <tr>
+            <th>Placa</th>
+            <th>Nome</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
           {vehicles.map((vehicle) => {
             return <RegisteredVehicle vehicle={vehicle} key={vehicle.id} />;
           })}
-        </div>
-      </div>
+        </tbody>
+      </table>
     </div>
   );
 }
