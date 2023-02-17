@@ -100,7 +100,7 @@ export function HomeContainer() {
     setNewVehicle("");
     //const vehicleData = newVehicle.split('-');
 
-    console.log(newVehicles);
+    //console.log(newVehicles);
   }
 
   //console.log(newVehicle);

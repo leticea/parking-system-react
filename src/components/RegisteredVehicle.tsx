@@ -12,13 +12,13 @@ interface VehicleProps {
 export function RegisteredVehicle({ vehicle }: VehicleProps) {
   console.log(vehicle);
 
-  const { id, plate, name, entrance, exit, amount } = vehicle;
+  const { id, plate, name, entrance, exit, amount, finished } = vehicle;
 
   const entranceDateFormatted = format(entrance, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
    });
 
-  console.log(entranceDateFormatted)
+  //console.log(entranceDateFormatted)
 
   const exitDateFormatted = format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
