@@ -12,13 +12,8 @@
   //border: 1px solid red;
 }
 
-.dataContainer p {
-  margin-left: -2rem;
-  margin-right: rem;
-}
-
 .dataContainer span {
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
 
 .dataContainer button {
@@ -37,3 +32,21 @@
 .dataContainer button:hover {
   color: var(--yellow-600);
 }
+
+.dataContainer .entrance {
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+
+  //border: 1px solid red;
+}
+.dataContainer .exit {
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+
+  border: 1px solid red;
+}
+

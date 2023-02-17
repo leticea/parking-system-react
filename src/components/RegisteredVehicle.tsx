@@ -14,13 +14,13 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
 
   const { id, plate, name, entrance, exit, amount } = vehicle;
 
-  const entranceDateFormatted = format(entrance, "d 'de' MMMM 'às' HH:mm:ss'h'", {
+  const entranceDateFormatted = format(entrance, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
    });
 
   console.log(entranceDateFormatted)
 
-  const exitDateFormatted = format(exit, "d 'de' MMMM 'às' HH:mm:ss'h'", {
+  const exitDateFormatted = format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
   });
 
@@ -30,10 +30,10 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
     <div className={styles.dataContainer}>
       <strong>{plate}</strong>
       <p>{name}</p>
-      <time
+      <time className={styles.entrance}
         dateTime={entrance.toISOString()}
       >{entranceDateFormatted}</time>
-      <time
+      <time className={styles.exit}
         dateTime={exit.toISOString()}
       >{exitDateFormatted}</time>
       <span>{amountFormatted}</span>

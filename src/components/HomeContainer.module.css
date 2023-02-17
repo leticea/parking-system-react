@@ -2,7 +2,6 @@
   background: var(--gray-100);
   min-width: 75rem;
   min-height: 32rem;
-  //margin: 2rem auto;
 
   //border: 1px solid red;
 }
@@ -92,14 +91,11 @@ button:hover {
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
   font-size: 1.5rem;
 
   //border: 1px solid red;
-}
-
-.watchlistContainer .ref {
-  margin-right: 1.2rem;
 }
 
 .infoContainer {
@@ -111,11 +107,17 @@ button:hover {
   font-size: 1.2rem;
   overflow-x: hidden;
 
-  //border: 1px solid red;
+  position: relative;
+
+  border: 1px solid red;
 }
 
 .infoContainer p {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
   margin-left: 2rem;
+  //border: 1px solid red;
 }
 
 .infoContainer span {
