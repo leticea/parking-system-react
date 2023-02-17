@@ -72,34 +72,32 @@ button:hover {
   color: var(--gray-100);
 }
 
-table {
-  min-height: 10rem;
-  min-width: 93rem;
-
+.watchlistContainer {
+  min-height: 25rem;
   margin: 1rem;
   background: var(--stone);
   border-radius: 8px;
   border: 2.5px solid var(--gray-400);
 
-  border: 1px solid red;
+  //border: 1px solid red;
 }
 
-th {
+.watchlistContainer header {
   background: var(--yellow-500);
   color: var(--gray-200);
   font-weight: 600;
   border-radius: 5px 5px 0 0;
   border-bottom: 2px solid var(--gray-400);
 
-  display: inline;
-
-
-  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3.1rem 1rem 1rem;
   font-size: 1.5rem;
 
   //border: 1px solid red;
 }
-/*
+
 .infoContainer {
   max-height: 20rem;
   display: flex;
@@ -111,7 +109,7 @@ th {
 
   position: relative;
 
-  border: 1px solid red;
+  //border: 1px solid red;
 }
 
 .infoContainer p {
@@ -141,4 +139,4 @@ th {
 
 .infoContainer button:hover {
   color: var(--yellow-600);
-} */
+}
