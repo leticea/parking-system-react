@@ -6,7 +6,6 @@ import { RegisteredVehicle } from "./RegisteredVehicle";
 import { PlusCircle } from "phosphor-react";
 import styles from "./HomeContainer.module.css";
 
-
 export interface VehiclesProps {
   id: string;
   plate: string;
@@ -24,8 +23,8 @@ let registeredVehicles = [
     name: "João Mangueira",
     entrance: new Date("2023-02-14T10:30:00Z"),
     exit: new Date("2023-02-14T11:30:00Z"),
-    amount: 100.00,
-    isFinished: true
+    amount: 100.0,
+    isFinished: true,
   },
   {
     id: uuidv4(),
@@ -33,8 +32,8 @@ let registeredVehicles = [
     name: "Letícia Nascimento",
     entrance: new Date("2023-02-15T11:30:00Z"),
     exit: new Date("2023-02-15T12:30:00Z"),
-    amount: 150.00,
-    isFinished: false
+    amount: 150.0,
+    isFinished: false,
   },
   {
     id: uuidv4(),
@@ -42,8 +41,8 @@ let registeredVehicles = [
     name: "Maria Pereira",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 160.00,
-    isFinished: true
+    amount: 160.0,
+    isFinished: true,
   },
   {
     id: uuidv4(),
@@ -51,8 +50,8 @@ let registeredVehicles = [
     name: "José Roberto",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 180.00,
-    isFinished: false
+    amount: 180.0,
+    isFinished: false,
   },
   {
     id: uuidv4(),
@@ -60,8 +59,8 @@ let registeredVehicles = [
     name: "Bruna Gonçalves",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 195.00,
-    isFinished: true
+    amount: 195.0,
+    isFinished: true,
   },
   {
     id: uuidv4(),
@@ -69,8 +68,8 @@ let registeredVehicles = [
     name: "Gustavo Oliveira",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
-    amount: 200.00,
-    isFinished: false
+    amount: 200.0,
+    isFinished: false,
   },
 ];
 
@@ -91,8 +90,8 @@ export function HomeContainer() {
         name: newVehicle,
         entrance: new Date(),
         exit: new Date(),
-        amount: 200.00,
-        isFinished: false
+        amount: 200.0,
+        isFinished: false,
       },
     ];
 
@@ -150,7 +149,13 @@ export function HomeContainer() {
 
         <div className={styles.infoContainer}>
           {vehicles.map((vehicle) => {
-            return <RegisteredVehicle vehicle={vehicle} removeVehicle={removeVehicle} key={vehicle.id} />;
+            return (
+              <RegisteredVehicle
+                vehicle={vehicle}
+                removeVehicle={removeVehicle}
+                key={vehicle.id}
+              />
+            );
           })}
         </div>
       </div>

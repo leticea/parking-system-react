@@ -40,7 +40,7 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
 
   return (
     <div className={styles.dataContainer}>
-      <strong className={finished ? styles.finished : styles.inProgress} >{plate}</strong>
+      <strong className={finished ? styles.finished : styles.inProgress}>{plate}</strong>
       <p>{name}</p>
       <time className={styles.entrance} dateTime={entrance.toISOString()}>
         {entranceDateFormatted}
