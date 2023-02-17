@@ -91,7 +91,7 @@ button:hover {
   border-bottom: 2px solid var(--gray-400);
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem;
   font-size: 1.5rem;
 
@@ -103,14 +103,13 @@ button:hover {
 }
 
 .infoContainer {
-  max-height: 300px;
+  max-height: 21rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   font-size: 1.2rem;
   overflow-x: hidden;
-  //overflow-y: scroll;
 
   //border: 1px solid red;
 }
@@ -137,4 +136,3 @@ button:hover {
 .infoContainer button:hover {
   color: var(--yellow-600);
 }
-
