@@ -91,7 +91,7 @@ button:hover {
   border-bottom: 2px solid var(--gray-400);
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1rem;
   font-size: 1.5rem;
 
