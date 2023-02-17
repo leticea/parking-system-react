@@ -30,12 +30,12 @@ export function RegisteredVehicle({ vehicle }: VehicleProps) {
     <div className={styles.dataContainer}>
       <strong>{plate}</strong>
       <p>{name}</p>
-      <time className={styles.entrance}
-        dateTime={entrance.toISOString()}
-      >{entranceDateFormatted}</time>
-      <time className={styles.exit}
-        dateTime={exit.toISOString()}
-      >{exitDateFormatted}</time>
+      <time className={styles.entrance} dateTime={entrance.toISOString()}>
+        {entranceDateFormatted}
+      </time>
+      <time className={styles.exit} dateTime={exit.toISOString()}>
+        {exitDateFormatted}
+      </time>
       <span>{amountFormatted}</span>
       <button type="submit" title="Pagar">
         <CurrencyDollar size={35} />

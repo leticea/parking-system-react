@@ -14,6 +14,7 @@ export interface VehiclesProps {
   entrance: Date;
   exit: Date;
   amount: number;
+  finished: boolean;
 }
 
 let registeredVehicles = [
@@ -24,6 +25,7 @@ let registeredVehicles = [
     entrance: new Date("2023-02-14T10:30:00Z"),
     exit: new Date("2023-02-14T11:30:00Z"),
     amount: 100.00,
+    finished: true
   },
   {
     id: uuidv4(),
@@ -32,6 +34,7 @@ let registeredVehicles = [
     entrance: new Date("2023-02-15T11:30:00Z"),
     exit: new Date("2023-02-15T12:30:00Z"),
     amount: 150.00,
+    finished: false
   },
   {
     id: uuidv4(),
@@ -40,6 +43,7 @@ let registeredVehicles = [
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
     amount: 160.00,
+    finished: true
   },
   {
     id: uuidv4(),
@@ -48,6 +52,7 @@ let registeredVehicles = [
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
     amount: 180.00,
+    finished: false
   },
   {
     id: uuidv4(),
@@ -56,6 +61,7 @@ let registeredVehicles = [
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
     amount: 195.00,
+    finished: true
   },
   {
     id: uuidv4(),
@@ -64,6 +70,7 @@ let registeredVehicles = [
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T15:30:00Z"),
     amount: 200.00,
+    finished: false
   },
 ];
 
@@ -85,6 +92,7 @@ export function HomeContainer() {
         entrance: new Date(),
         exit: new Date(),
         amount: 200.00,
+        finished: false
       },
     ];
 
@@ -122,7 +130,7 @@ export function HomeContainer() {
         </button>
       </form>
 
-      <div className={styles.watchlistContainer}>
+      <div className={styles.infoDataContainer}>
         <header>
           <strong>Placa</strong>
           <p>Nome</p>

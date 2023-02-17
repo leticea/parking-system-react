@@ -72,7 +72,7 @@ button:hover {
   color: var(--gray-100);
 }
 
-.watchlistContainer {
+.infoDataContainer {
   min-height: 25rem;
   margin: 1rem;
   background: var(--stone);
@@ -82,7 +82,7 @@ button:hover {
   //border: 1px solid red;
 }
 
-.watchlistContainer header {
+.infoDataContainer header {
   background: var(--yellow-500);
   color: var(--gray-200);
   font-weight: 600;
@@ -106,8 +106,6 @@ button:hover {
   justify-content: space-between;
   font-size: 1.2rem;
   overflow-x: hidden;
-
-  position: relative;
 
   //border: 1px solid red;
 }
