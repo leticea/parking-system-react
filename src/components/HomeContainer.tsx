@@ -77,9 +77,9 @@ export function HomeContainer() {
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
-  const [searchInputValue, setSearchInputValue] = useState("");
-
   function handleInsertNewVehicle(event: FormEvent) {
+    const vehicles = getVehicles();
+
     event.preventDefault();
 
     setVehicles(vehicles);
@@ -117,9 +117,18 @@ export function HomeContainer() {
     //console.log(setSearchInputValue)
   }
 
+  function getVehicles() {
+    return vehicles;
+  }
+
   useEffect(() => {
-    setVehicles(vehicles);
-  }, [newVehicle === ""]);
+    const vehicles = getVehicles();
+
+    if (vehicles) {
+      setVehicles(vehicles)
+    }
+  }, [newVehicle === ''])
+
 
   function removeVehicle(id: string) {
     const vehiclesInProgress = vehicles.filter((vehicle) => {
