@@ -39,7 +39,7 @@
 }
 
 .finished {
-  background: red;
+  background: var(--red-500);;
 }
 
 .inProgress {
