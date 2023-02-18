@@ -107,6 +107,8 @@ export function HomeContainer() {
   console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
+
+    let r = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@-#-$])(?=^.{8,50}$).*$/;
     const filteredVehicles = vehicles.filter((vehicle) =>
       vehicle.name.toLowerCase().includes(newVehicle)
     );
