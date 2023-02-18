@@ -13,8 +13,6 @@ interface VehicleProps {
 
 export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
   const [isFinished] = useState(vehicle.isFinished);
-  const [finished, setFinished] = useState(isFinished);
-  const [inProgress, setInProgress] = useState(isFinished);
 
   function handleRemoveVehicle(id: string) {
     removeVehicle(id);
@@ -36,8 +34,8 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
 
   return (
     <div className={styles.dataContainer}>
-      <strong className={finished ? styles.finished : styles.inProgress}>{plate}</strong>
-      <p>{name}</p>
+      <strong className={isFinished ? styles.finished : styles.inProgress}>{plate}</strong>
+      <p className={isFinished ? styles.finished : styles.inProgress}>{name}</p>
       <time className={styles.entrance} dateTime={entrance.toISOString()}>
         {entranceDateFormatted}
       </time>
