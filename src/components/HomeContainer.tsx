@@ -131,11 +131,11 @@ export function HomeContainer() {
 
 
   function removeVehicle(id: string) {
-    const vehiclesInProgress = vehicles.filter((vehicle) => {
+    const parkedVehicles = vehicles.filter((vehicle) => {
       return vehicle.id !== id;
     });
 
-    setVehicles(vehiclesInProgress);
+    setVehicles(parkedVehicles);
   }
 
   return (
