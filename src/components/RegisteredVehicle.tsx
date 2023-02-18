@@ -18,8 +18,6 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
 
   function handleRemoveVehicle(id: string) {
     removeVehicle(id);
-
-    console.log(handleRemoveVehicle)
   }
 
   //console.log(vehicle);
@@ -29,8 +27,6 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
   const entranceDateFormatted = format(entrance, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
    });
-
-  //console.log(entranceDateFormatted)
 
   const exitDateFormatted = format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
     locale: ptBR,
