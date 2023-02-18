@@ -108,7 +108,6 @@ export function HomeContainer() {
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
 
-    let r = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@-#-$])(?=^.{8,50}$).*$/;
     const filteredVehicles = vehicles.filter((vehicle) =>
       vehicle.name.toLowerCase().includes(newVehicle)
     );
@@ -129,7 +128,7 @@ export function HomeContainer() {
     if (vehicles) {
       setVehicles(vehicles)
     }
-  }, [newVehicle === ''])
+  }, [newVehicle == ''])
 
 
   function removeVehicle(id: string) {
