@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { RegisteredVehicle } from "./RegisteredVehicle";
@@ -77,8 +77,7 @@ export function HomeContainer() {
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
-  const [searchInputValue, setSearchInputValue] = useState('');
-
+  const [searchInputValue, setSearchInputValue] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
@@ -105,17 +104,22 @@ export function HomeContainer() {
     //console.log(newVehicles);
   }
 
-  //console.log(newVehicle);
+  console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
-
-    const filteredVehicles = vehicles.filter((vehicle) => vehicle.name.toLowerCase().includes(newVehicle));
+    const filteredVehicles = vehicles.filter((vehicle) =>
+      vehicle.name.toLowerCase().includes(newVehicle)
+    );
 
     setVehicles(filteredVehicles);
     setNewVehicle(event.target.value);
 
     //console.log(setSearchInputValue)
   }
+
+  useEffect(() => {
+    setVehicles(vehicles);
+  }, [newVehicle === ""]);
 
   function removeVehicle(id: string) {
     const vehiclesInProgress = vehicles.filter((vehicle) => {
