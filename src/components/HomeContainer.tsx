@@ -107,7 +107,6 @@ export function HomeContainer() {
   console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
-
     const filteredVehicles = vehicles.filter((vehicle) =>
       vehicle.name.toLowerCase().includes(newVehicle)
     );
@@ -121,15 +120,6 @@ export function HomeContainer() {
   function getVehicles() {
     return vehicles;
   }
-
-  useEffect(() => {
-    const vehicles = getVehicles();
-
-    if (vehicles) {
-      setVehicles(vehicles)
-    }
-  }, [newVehicle == ''])
-
 
   function removeVehicle(id: string) {
     const parkedVehicles = vehicles.filter((vehicle) => {
