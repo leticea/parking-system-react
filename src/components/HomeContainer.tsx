@@ -100,7 +100,7 @@ export function HomeContainer() {
 
     const auxiliary = newVehicle.split('-');
 
-    let firstAuxNumber = auxiliary[0]
+    let firstAuxNumber = auxiliary[0].includes("plate")
     let secondAuxNumber = auxiliary[1]
 
 
