@@ -100,7 +100,12 @@ export function HomeContainer() {
 
     const auxiliary = newVehicle.split('-');
 
-    console.log(auxiliary);
+    let firstAuxNumber = auxiliary[0]
+    let secondAuxNumber = auxiliary[1]
+
+
+    console.log(firstAuxNumber);
+    console.log(secondAuxNumber);
   }
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
