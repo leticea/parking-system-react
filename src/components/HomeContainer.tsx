@@ -85,11 +85,11 @@ export function HomeContainer() {
     const aux = newVehicle.split('-');
 
     const newVehicles = [
-      ...vehicles,
+      ...registeredVehicles,
       {
         id: uuidv4(),
-        plate: aux[0],
-        name: aux[1],
+        plate: aux[0].trim(),
+        name: aux[1].trim(),
         entrance: new Date(),
         amount: 7.0,
         isFinished: false,
@@ -98,12 +98,11 @@ export function HomeContainer() {
 
     setVehicles(newVehicles);
     setNewVehicle("");
-
   }
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
-    const filteredVehicles = vehicles.filter((vehicle) =>
-      vehicle.name.toLowerCase().includes(newVehicle)
+    const filteredVehicles = registeredVehicles.filter((vehicle) =>
+      vehicle.name.toLowerCase().includes(newVehicle.toLowerCase())
     );
 
     setNewVehicle(event.target.value);
@@ -117,6 +116,10 @@ export function HomeContainer() {
 
     setVehicles(parkedVehicles);
   }
+
+  useEffect(() => {
+    setVehicles(registeredVehicles);
+  }, [newVehicle == ""]);
 
   return (
     <div className={styles.container}>

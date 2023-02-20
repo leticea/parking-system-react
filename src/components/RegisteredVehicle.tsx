@@ -63,6 +63,7 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
           size={35}
           onClick={() => handleRemoveVehicle(vehicle.id)}
         />
+        
       </button>
     </div>
   );
