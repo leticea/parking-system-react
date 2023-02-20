@@ -114,8 +114,14 @@ export function HomeContainer() {
     setVehicles(filteredVehicles);
     setNewVehicle(event.target.value);
 
-    //console.log(setSearchInputValue)
+    if (newVehicle == "") {
+      return setVehicles;
+    }
+
+    console.log(setNewVehicle);
   }
+
+
 
   function getVehicles() {
     return vehicles;
