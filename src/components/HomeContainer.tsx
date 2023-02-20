@@ -97,23 +97,19 @@ export function HomeContainer() {
 
     setVehicles(newVehicles);
     setNewVehicle("");
-    const vehicleData = newVehicle.split("-");
 
-    console.log(newVehicles);
+    const auxiliary = newVehicle.split('-');
+
+    console.log(auxiliary);
   }
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
+    const filteredVehicles = vehicles.filter((vehicle) =>
+      vehicle.name.toLowerCase().includes(newVehicle)
+    );
+
     setNewVehicle(event.target.value);
-
-    if (option.value == name) {
-      const filteredVehicles = vehicles.filter((vehicle) =>
-        vehicle.name.toLowerCase().includes(newVehicle)
-      );
-
-      setVehicles(filteredVehicles);
-    }
-
-
+    setVehicles(filteredVehicles);
   }
 
   function removeVehicle(id: string) {

@@ -43,7 +43,7 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
         {exitDateFormatted}
       </time>
       <span>{amountFormatted}</span>
-      <button type="submit" title="Pagar">
+      <button type="submit" title="Finalizar">
         <CurrencyDollar size={35} onClick={() => handleRemoveVehicle(vehicle.id)} />
       </button>
     </div>
