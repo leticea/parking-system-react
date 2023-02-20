@@ -78,8 +78,6 @@ export function HomeContainer() {
   const [newVehicle, setNewVehicle] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
-    const vehicles = getVehicles();
-
     event.preventDefault();
 
     setVehicles(vehicles);
@@ -99,35 +97,23 @@ export function HomeContainer() {
 
     setVehicles(newVehicles);
     setNewVehicle("");
-    //const vehicleData = newVehicle.split('-');
+    const vehicleData = newVehicle.split("-");
 
-    //console.log(newVehicles);
+    console.log(newVehicles);
   }
-
-  function getRegisteredVehicles() {
-    return vehicles;
-  }
-
-  useEffect(() => {
-    const vehicles = getRegisteredVehicles()
-    if (vehicles) {
-      setVehicles(vehicles);
-    }
-  }, [newVehicle == ""]);
-
-  //console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
-    const filteredVehicles = vehicles.filter((vehicle) =>
-      vehicle.name.toLowerCase().includes(newVehicle)
-    );
-
     setNewVehicle(event.target.value);
-    setVehicles(filteredVehicles);
-  }
 
-  function getVehicles() {
-    return vehicles;
+    if (option.value == name) {
+      const filteredVehicles = vehicles.filter((vehicle) =>
+        vehicle.name.toLowerCase().includes(newVehicle)
+      );
+
+      setVehicles(filteredVehicles);
+    }
+
+
   }
 
   function removeVehicle(id: string) {
