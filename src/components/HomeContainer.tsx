@@ -48,8 +48,8 @@ let registeredVehicles = [
     id: uuidv4(),
     plate: "WDS-5487",
     name: "José Roberto",
-    entrance: new Date("2023-02-16T12:30:00Z"),
-    exit: new Date("2023-02-16T16:30:00Z"),
+    entrance: new Date("2023-02-18T12:30:00Z"),
+    exit: new Date("2023-02-18T16:30:00Z"),
     amount: 28.0,
     isFinished: false,
   },
@@ -57,8 +57,8 @@ let registeredVehicles = [
     id: uuidv4(),
     plate: "PHJ-4526",
     name: "Bruna Gonçalves",
-    entrance: new Date("2023-02-16T14:30:00Z"),
-    exit: new Date("2023-02-16T16:00:00Z"),
+    entrance: new Date("2023-02-20T14:30:00Z"),
+    exit: new Date("2023-02-20T16:00:00Z"),
     amount: 10.5,
     isFinished: true,
   },
@@ -66,8 +66,8 @@ let registeredVehicles = [
     id: uuidv4(),
     plate: "NGP-2021",
     name: "Gustavo Oliveira",
-    entrance: new Date("2023-02-16T14:30:00Z"),
-    exit: new Date("2023-02-16T17:00:00Z"),
+    entrance: new Date("2023-02-21T14:30:00Z"),
+    exit: new Date("2023-02-21T17:00:00Z"),
     amount: 17.5,
     isFinished: false,
   },
@@ -90,6 +90,7 @@ export function HomeContainer() {
       setNewVehicle("Preencha no formato correto.")
       return;
     }
+
     const newPlace = `${aux[0]}-${aux[1]}`;
 
     const newVehicles = [

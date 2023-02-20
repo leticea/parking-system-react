@@ -47,17 +47,17 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
         {plate}
       </strong>
       <p className={isFinished ? styles.finished : styles.inProgress}>{name}</p>
-      <time className={styles.entrance} dateTime={entrance.toISOString()}>
+      <time className={isFinished ? styles.finished : styles.inProgress} dateTime={entrance.toISOString()}>
         {entranceDateFormatted}
       </time>
       {exit ? (
-        <time className={styles.exit} dateTime={exit.toISOString()}>
+        <time className={isFinished ? styles.finished : styles.inProgress} dateTime={exit.toISOString()}>
           {exitDateFormatted}
         </time>
       ) : (
         ""
       )}
-      <span>{amountFormatted}</span>
+      <span className={isFinished ? styles.finished : styles.inProgress}>{amountFormatted}</span>
       <button type="submit" title="Finalizar">
         <CurrencyDollar
           size={35}

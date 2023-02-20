@@ -39,9 +39,9 @@
 }
 
 .finished {
-  background: var(--red-500);
+  color: var(--red-500);
 }
 
 .inProgress {
-  background: var(--green-500);
+  color: var(--green-500);
 }

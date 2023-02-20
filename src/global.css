@@ -13,19 +13,12 @@
   --gray-800: #202024;
   --gray-900: #121214;
 
-  --green-300: #00b37e;
-  --green-500: #84cc16;
+  --green-500: #4d7c0f;
 
-  --red-500: #f87171;
-  --red-600: #ab222e;
-  --red-700: #7a1921;
+  --red-500: #dc2626;
 
   --yellow-500: #eab308;
   --yellow-600: #ca8a04;
-/*
-  --yellow-300: #fde047;
-  --yellow-500: #FFCD00;
-  --yellow-600: #EAB308; */
 }
 
 * {
