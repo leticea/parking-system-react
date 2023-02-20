@@ -11,7 +11,7 @@ export interface VehiclesProps {
   plate: string;
   name: string;
   entrance: Date;
-  exit: Date;
+  exit?: Date;
   amount: number;
   isFinished: boolean;
 }
@@ -82,14 +82,15 @@ export function HomeContainer() {
 
     setVehicles(vehicles);
 
+    const aux = newVehicle.split('-');
+
     const newVehicles = [
       ...vehicles,
       {
         id: uuidv4(),
-        plate: newVehicle,
-        name: newVehicle,
+        plate: aux[0],
+        name: aux[1],
         entrance: new Date(),
-        exit: new Date(),
         amount: 7.0,
         isFinished: false,
       },
@@ -98,14 +99,6 @@ export function HomeContainer() {
     setVehicles(newVehicles);
     setNewVehicle("");
 
-    const auxiliary = newVehicle.split('-');
-
-    let firstAuxNumber = auxiliary[0].includes("plate")
-    let secondAuxNumber = auxiliary[1]
-
-
-    console.log(firstAuxNumber);
-    console.log(secondAuxNumber);
   }
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {

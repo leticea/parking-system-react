@@ -22,29 +22,47 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
 
   const { id, plate, name, entrance, exit, amount } = vehicle;
 
-  const entranceDateFormatted = format(entrance, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
-    locale: ptBR,
-   });
+  const entranceDateFormatted = format(
+    entrance,
+    "d 'de' MMMM 'às' HH:mm:ss'hs'",
+    {
+      locale: ptBR,
+    }
+  );
 
-  const exitDateFormatted = format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
-    locale: ptBR,
-  });
+  const exitDateFormatted = exit
+    ? format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
+        locale: ptBR,
+      })
+    : null;
 
-  const amountFormatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount);
+  const amountFormatted = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(amount);
 
   return (
     <div className={styles.dataContainer}>
-      <strong className={isFinished ? styles.finished : styles.inProgress}>{plate}</strong>
+      <strong className={isFinished ? styles.finished : styles.inProgress}>
+        {plate}
+      </strong>
       <p className={isFinished ? styles.finished : styles.inProgress}>{name}</p>
       <time className={styles.entrance} dateTime={entrance.toISOString()}>
         {entranceDateFormatted}
       </time>
-      <time className={styles.exit} dateTime={exit.toISOString()}>
-        {exitDateFormatted}
-      </time>
+      {exit ? (
+        <time className={styles.exit} dateTime={exit.toISOString()}>
+          {exitDateFormatted}
+        </time>
+      ) : (
+        ""
+      )}
       <span>{amountFormatted}</span>
       <button type="submit" title="Finalizar">
-        <CurrencyDollar size={35} onClick={() => handleRemoveVehicle(vehicle.id)} />
+        <CurrencyDollar
+          size={35}
+          onClick={() => handleRemoveVehicle(vehicle.id)}
+        />
       </button>
     </div>
   );
