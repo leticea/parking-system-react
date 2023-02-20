@@ -74,6 +74,7 @@ let registeredVehicles = [
 ];
 
 export function HomeContainer() {
+  const [vehiclesDB, setVehiclesDB] = useState<VehiclesProps[]>(registeredVehicles);
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
@@ -85,7 +86,7 @@ export function HomeContainer() {
     const aux = newVehicle.split('-');
 
     const newVehicles = [
-      ...registeredVehicles,
+      ...vehiclesDB,
       {
         id: uuidv4(),
         plate: aux[0].trim(),
@@ -95,13 +96,14 @@ export function HomeContainer() {
         isFinished: false,
       },
     ];
+    console.log('222')
 
-    setVehicles(newVehicles);
+    setVehiclesDB(newVehicles);
     setNewVehicle("");
   }
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
-    const filteredVehicles = registeredVehicles.filter((vehicle) =>
+    const filteredVehicles = vehiclesDB.filter((vehicle) =>
       vehicle.name.toLowerCase().includes(newVehicle.toLowerCase())
     );
 
@@ -118,7 +120,7 @@ export function HomeContainer() {
   }
 
   useEffect(() => {
-    setVehicles(registeredVehicles);
+    setVehicles(vehiclesDB);
   }, [newVehicle == ""]);
 
   return (

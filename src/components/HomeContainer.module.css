@@ -65,14 +65,14 @@ button {
   justify-content: space-between;
   background: var(--yellow-500);
   cursor: pointer;
-  color: var(--gray-500);
+  color: var(--white);
   font-weight: 600;
-  transition: color 0.2s, background-color 0.2s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 button:hover {
-  background: var(--yellow-600);
-  color: var(--gray-100);
+  color: var(--yellow-600);
+  background: var(--gray-100);
 }
 
 .infoDataContainer {
@@ -87,7 +87,7 @@ button:hover {
 
 .infoDataContainer header {
   background: var(--yellow-500);
-  color: var(--gray-200);
+  color: var(--white);
   font-weight: 600;
   border-radius: 5px 5px 0 0;
   border-bottom: 2px solid var(--gray-400);
