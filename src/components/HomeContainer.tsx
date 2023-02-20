@@ -104,7 +104,12 @@ export function HomeContainer() {
     //console.log(newVehicles);
   }
 
+  function getRegisteredVehicles() {
+    return vehicles;
+  }
+
   useEffect(() => {
+    const vehicles = getRegisteredVehicles()
     if (vehicles) {
       setVehicles(vehicles);
     }
