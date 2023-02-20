@@ -104,24 +104,22 @@ export function HomeContainer() {
     //console.log(newVehicles);
   }
 
-  console.log(newVehicle);
+  useEffect(() => {
+    if (vehicles) {
+      setVehicles(vehicles);
+    }
+  }, [newVehicle == ""]);
+
+  //console.log(newVehicle);
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
     const filteredVehicles = vehicles.filter((vehicle) =>
       vehicle.name.toLowerCase().includes(newVehicle)
     );
 
-    setVehicles(filteredVehicles);
     setNewVehicle(event.target.value);
-
-    if (newVehicle == "") {
-      return setVehicles;
-    }
-
-    console.log(setNewVehicle);
+    setVehicles(filteredVehicles);
   }
-
-
 
   function getVehicles() {
     return vehicles;
