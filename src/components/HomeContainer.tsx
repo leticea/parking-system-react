@@ -59,7 +59,7 @@ let registeredVehicles = [
     name: "Bruna Gonçalves",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T16:00:00Z"),
-    amount: 10.50,
+    amount: 10.5,
     isFinished: true,
   },
   {
@@ -68,13 +68,14 @@ let registeredVehicles = [
     name: "Gustavo Oliveira",
     entrance: new Date("2023-02-16T14:30:00Z"),
     exit: new Date("2023-02-16T17:00:00Z"),
-    amount: 17.50,
+    amount: 17.5,
     isFinished: false,
   },
 ];
 
 export function HomeContainer() {
-  const [vehiclesDB, setVehiclesDB] = useState<VehiclesProps[]>(registeredVehicles);
+  const [vehiclesDB, setVehiclesDB] =
+    useState<VehiclesProps[]>(registeredVehicles);
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
@@ -83,14 +84,20 @@ export function HomeContainer() {
 
     setVehicles(vehicles);
 
-    const aux = newVehicle.split(' ');
+    const aux = newVehicle.split("-");
+
+    if (typeof aux[0] == 'undefined' || typeof aux[1] == 'undefined' || typeof aux[2] == "undefined") {
+      setNewVehicle("Preencha no formato correto.")
+      return;
+    }
+    const newPlace = `${aux[0]}-${aux[1]}`;
 
     const newVehicles = [
       ...vehiclesDB,
       {
         id: uuidv4(),
-        plate: aux[0].trim(),
-        name: aux[1].trim(),
+        plate: newPlace.trim(),
+        name: aux[2].trim(),
         entrance: new Date(),
         amount: 7.0,
         isFinished: false,
@@ -127,10 +134,11 @@ export function HomeContainer() {
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
           type="text"
-          placeholder="ABC-2124 Wellington Mangueira"
+          placeholder="ABC-2124 - Wellington Mangueira"
           name="newVehicle"
           value={newVehicle}
           onChange={updateNewVehicleValue}
+          required
         />
         <select>
           <option value="search">Pesquisar por</option>
