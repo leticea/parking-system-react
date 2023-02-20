@@ -83,7 +83,7 @@ export function HomeContainer() {
 
     setVehicles(vehicles);
 
-    const aux = newVehicle.split('-');
+    const aux = newVehicle.split(' ');
 
     const newVehicles = [
       ...vehiclesDB,
@@ -96,7 +96,6 @@ export function HomeContainer() {
         isFinished: false,
       },
     ];
-    console.log('222')
 
     setVehiclesDB(newVehicles);
     setNewVehicle("");
@@ -128,7 +127,7 @@ export function HomeContainer() {
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
           type="text"
-          placeholder="ABC-2124 - Wellington Mangueira"
+          placeholder="ABC-2124 Wellington Mangueira"
           name="newVehicle"
           value={newVehicle}
           onChange={updateNewVehicleValue}
