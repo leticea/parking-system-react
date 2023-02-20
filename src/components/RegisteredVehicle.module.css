@@ -18,6 +18,10 @@
   margin-left: 4rem;
 }
 
+.dataContainer p {
+  text-transform: capitalize;
+}
+
 .dataContainer button:hover {
   color: var(--yellow-600);
 }

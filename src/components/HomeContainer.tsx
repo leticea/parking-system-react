@@ -86,8 +86,12 @@ export function HomeContainer() {
 
     const aux = newVehicle.split("-");
 
-    if (typeof aux[0] == 'undefined' || typeof aux[1] == 'undefined' || typeof aux[2] == "undefined") {
-      setNewVehicle("Preencha no formato correto.")
+    if (
+      typeof aux[0] == "undefined" ||
+      typeof aux[1] == "undefined" ||
+      typeof aux[2] == "undefined"
+    ) {
+      setNewVehicle("Preencha no formato correto.");
       return;
     }
 

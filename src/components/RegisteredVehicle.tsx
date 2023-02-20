@@ -18,8 +18,6 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
     removeVehicle(id);
   }
 
-  //console.log(vehicle);
-
   const { id, plate, name, entrance, exit, amount } = vehicle;
 
   const entranceDateFormatted = format(
@@ -47,17 +45,25 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
         {plate}
       </strong>
       <p className={isFinished ? styles.finished : styles.inProgress}>{name}</p>
-      <time className={isFinished ? styles.finished : styles.inProgress} dateTime={entrance.toISOString()}>
+      <time
+        className={isFinished ? styles.finished : styles.inProgress}
+        dateTime={entrance.toISOString()}
+      >
         {entranceDateFormatted}
       </time>
       {exit ? (
-        <time className={isFinished ? styles.finished : styles.inProgress} dateTime={exit.toISOString()}>
+        <time
+          className={isFinished ? styles.finished : styles.inProgress}
+          dateTime={exit.toISOString()}
+        >
           {exitDateFormatted}
         </time>
       ) : (
         ""
       )}
-      <span className={isFinished ? styles.finished : styles.inProgress}>{amountFormatted}</span>
+      <span className={isFinished ? styles.finished : styles.inProgress}>
+        {amountFormatted}
+      </span>
       <button type="submit" title="Finalizar">
         <CurrencyDollar
           size={35}
