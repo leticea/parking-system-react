@@ -34,7 +34,7 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
     ? format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
         locale: ptBR,
       })
-    : new Date().setHours(new Date().getHours() + 1)
+    : null;
 
   const amountFormatted = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -49,19 +49,19 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
       <p className={isFinished ? styles.finished : styles.inProgress}>{name}</p>
       <time
         className={isFinished ? styles.finished : styles.inProgress}
-        dateTime={entrance.toISOString()}
+        dateTime={entrance.toString()}
       >
         {entranceDateFormatted}
       </time>
       {exit ? (
         <time
           className={isFinished ? styles.finished : styles.inProgress}
-          dateTime={exit.toISOString()}
+          dateTime={exit.toString()}
         >
           {exitDateFormatted}
         </time>
       ) : (
-        new Date().setHours(new Date().getHours() + 1)
+        ""
       )}
       <span className={isFinished ? styles.finished : styles.inProgress}>
         {amountFormatted}
