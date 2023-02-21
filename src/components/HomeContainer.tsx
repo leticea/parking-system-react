@@ -148,7 +148,8 @@ export function HomeContainer() {
           required
           className={styles.errorMessage}
         />
-        <input type="time" min={00:15} max={2} name="hours" id="hours" />
+        Informe o tempo desejado:
+        <input type="time" min={5} max={120} name="hours" id="hours" />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
