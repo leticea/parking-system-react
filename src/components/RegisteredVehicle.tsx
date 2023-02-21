@@ -3,7 +3,7 @@ import { VehiclesProps } from "./HomeContainer";
 import styles from "./RegisteredVehicle.module.css";
 
 import ptBR from "date-fns/locale/pt-BR";
-import { format } from "date-fns";
+import { format, setDate, setHours } from "date-fns";
 import { useState } from "react";
 
 interface VehicleProps {
@@ -32,7 +32,7 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
     ? format(exit, "d 'de' MMMM 'às' HH:mm:ss'hs'", {
         locale: ptBR,
       })
-    : null;
+    : setHours(new Date(), +1)
 
   const amountFormatted = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -59,7 +59,7 @@ export function RegisteredVehicle({ vehicle, removeVehicle }: VehicleProps) {
           {exitDateFormatted}
         </time>
       ) : (
-        ""
+        setHours(new Date(), +1)
       )}
       <span className={isFinished ? styles.finished : styles.inProgress}>
         {amountFormatted}

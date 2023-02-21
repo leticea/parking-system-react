@@ -78,8 +78,6 @@ export function HomeContainer() {
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
 
-  const [newTime, setNewTime] = useState("HH:mm");
-
   const [errorMessage] = useState("Preencha no formato correto.");
 
   function handleInsertNewVehicle(event: FormEvent) {
@@ -107,6 +105,7 @@ export function HomeContainer() {
         plate: newPlace.trim(),
         name: aux[2].trim(),
         entrance: new Date(),
+        exit: new Date(),
         amount: 7.0,
         isFinished: false,
       },
@@ -114,10 +113,6 @@ export function HomeContainer() {
 
     setVehiclesDB(newVehicles);
     setNewVehicle("");
-  }
-
-  function amountOfTime() {
-    console.log(newTime)
   }
 
   function updateNewVehicleValue(event: ChangeEvent<HTMLInputElement>) {
@@ -153,14 +148,13 @@ export function HomeContainer() {
           required
           className={!setNewVehicle ? styles.errorMessage : ''}
         />
-        <input type="time" value={newTime} name="newTime" />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
           <option value="name">Nome</option>
           <option value="date">Data</option>
         </select>
-        <button type="submit" onClick={amountOfTime}>
+        <button type="submit">
           Adicionar <PlusCircle />
         </button>
       </form>
