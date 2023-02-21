@@ -148,7 +148,7 @@ export function HomeContainer() {
           required
           className={styles.errorMessage}
         />
-        Informe o tempo desejado:
+        Informe o tempo desejado (15min - 2hs):
         <input type="time" min={5} max={120} name="hours" id="hours" />
         <select>
           <option value="search">Pesquisar por</option>
