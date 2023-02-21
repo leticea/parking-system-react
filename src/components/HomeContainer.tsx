@@ -78,7 +78,7 @@ export function HomeContainer() {
     useState<VehiclesProps[]>(registeredVehicles);
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
-  const [errorMessage] = useState()
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
@@ -93,6 +93,7 @@ export function HomeContainer() {
       typeof aux[2] == "undefined"
     ) {
       setNewVehicle("Preencha no formato correto.");
+
       return;
     }
 
@@ -139,13 +140,13 @@ export function HomeContainer() {
     <div className={styles.container}>
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
-          className={styles.errorMessage}
           type="text"
           placeholder="ABC-2124 - Wellington Mangueira"
           name="newVehicle"
           value={newVehicle}
           onChange={updateNewVehicleValue}
           required
+          className={styles.errorMessage}
         />
         <select>
           <option value="search">Pesquisar por</option>
