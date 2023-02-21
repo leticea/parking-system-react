@@ -32,6 +32,10 @@ input {
   text-transform: capitalize;
 }
 
+input value {
+  color: red;
+}
+
 select {
   width: 11rem;
   height: 100%;
