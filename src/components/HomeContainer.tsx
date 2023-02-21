@@ -74,11 +74,10 @@ let registeredVehicles = [
 ];
 
 export function HomeContainer() {
-  const [vehiclesDB, setVehiclesDB] =
-    useState<VehiclesProps[]>(registeredVehicles);
+  const [vehiclesDB, setVehiclesDB] = useState<VehiclesProps[]>(registeredVehicles);
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage] = useState("Preencha no formato correto.");
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
@@ -92,8 +91,7 @@ export function HomeContainer() {
       typeof aux[1] == "undefined" ||
       typeof aux[2] == "undefined"
     ) {
-      setNewVehicle("Preencha no formato correto.");
-
+      setNewVehicle(errorMessage);
       return;
     }
 
@@ -134,7 +132,7 @@ export function HomeContainer() {
 
   useEffect(() => {
     setVehicles(vehiclesDB);
-    setErrorMessage(errorMessage)
+    //setErrorMessage(errorMessage)
   }, [newVehicle == ""]);
 
   return (
@@ -147,8 +145,9 @@ export function HomeContainer() {
           value={newVehicle}
           onChange={updateNewVehicleValue}
           required
-          className={styles.errorMessage}
+          className={!setNewVehicle ? styles.errorMessage : styles.input}
         />
+        <input type="time" name="amountOfTime" id="amountOfTime" />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
