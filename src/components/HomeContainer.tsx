@@ -134,6 +134,7 @@ export function HomeContainer() {
 
   useEffect(() => {
     setVehicles(vehiclesDB);
+    setErrorMessage(errorMessage)
   }, [newVehicle == ""]);
 
   return (
@@ -142,14 +143,12 @@ export function HomeContainer() {
         <input
           type="text"
           placeholder="ABC-2124 - Wellington Mangueira"
-          name={errorMessage}
+          name="newVehicle"
           value={newVehicle}
           onChange={updateNewVehicleValue}
           required
           className={styles.errorMessage}
         />
-        Informe o tempo desejado (15min - 2hs):
-        <input type="time" min={5} max={120} name="hours" id="hours" />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
