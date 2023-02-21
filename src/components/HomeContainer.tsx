@@ -142,12 +142,13 @@ export function HomeContainer() {
         <input
           type="text"
           placeholder="ABC-2124 - Wellington Mangueira"
-          name="newVehicle"
+          name={errorMessage}
           value={newVehicle}
           onChange={updateNewVehicleValue}
           required
           className={styles.errorMessage}
         />
+        <input type="time" min={00:15} max={2} name="hours" id="hours" />
         <select>
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>

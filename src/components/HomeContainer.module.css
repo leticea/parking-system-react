@@ -32,7 +32,7 @@ input {
   text-transform: capitalize;
 }
 
-.errorMessage::before {
+.errorMessage {
   color: red;
 }
 
