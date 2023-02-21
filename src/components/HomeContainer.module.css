@@ -121,7 +121,8 @@ button:hover {
   display: flex;
   justify-content: center;
   margin-left: 2rem;
-  border: 1px solid red;
+  
+  //border: 1px solid red;
 }
 
 .infoContainer span {
