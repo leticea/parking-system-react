@@ -114,7 +114,6 @@ export function HomeContainer() {
 
     setVehiclesDB(newVehicles);
     setNewVehicle("");
-
   }
 
   function amountOfTime() {
