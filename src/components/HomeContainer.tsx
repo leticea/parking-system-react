@@ -78,6 +78,7 @@ export function HomeContainer() {
     useState<VehiclesProps[]>(registeredVehicles);
   const [vehicles, setVehicles] = useState<VehiclesProps[]>(registeredVehicles);
   const [newVehicle, setNewVehicle] = useState("");
+  const [errorMessage] = useState()
 
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
@@ -138,6 +139,7 @@ export function HomeContainer() {
     <div className={styles.container}>
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
         <input
+          className={styles.errorMessage}
           type="text"
           placeholder="ABC-2124 - Wellington Mangueira"
           name="newVehicle"

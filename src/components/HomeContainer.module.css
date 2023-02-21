@@ -32,7 +32,7 @@ input {
   text-transform: capitalize;
 }
 
-input value {
+.errorMessage {
   color: red;
 }
 
