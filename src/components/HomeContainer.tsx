@@ -138,11 +138,13 @@ export function HomeContainer() {
     setVehicles(vehiclesDB);
   }, [newVehicle == ""]);
 
-  function selectOptions(event: SelectHTMLAttributes<HTMLSelectElement>) {
-    setDescription(select.option.name)
+  function selectOptions(event: FormEvent) {
+    setDescription(event.target.value)
+
+    console.log(description)
   }
 
-  console.log(setDescription)
+
 
   return (
     <div className={styles.container}>
@@ -156,7 +158,7 @@ export function HomeContainer() {
           required
           className={setNewVehicle == undefined ? styles.errorMessage : ''}
         />
-        <select value={description} name="description" id="description">
+        <select onChange={selectOptions} value={description} name="description">
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
           <option value="name">Nome</option>
