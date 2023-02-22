@@ -86,7 +86,6 @@ export function HomeContainer() {
     event.preventDefault();
 
     setVehicles(vehicles);
-
     const aux = newVehicle.split("-");
 
     if (
