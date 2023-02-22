@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, SelectHTMLAttributes, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { RegisteredVehicle } from "./RegisteredVehicle";
@@ -137,14 +137,15 @@ export function HomeContainer() {
     setVehicles(vehiclesDB);
   }, [newVehicle == ""]);
 
-  function selectOptions(event: FormEvent) {
-    event.preventDefault();
+  // function selectOptions(event: FormEvent) {
+  //   event.preventDefault();
 
-    setDescription(event.target.value)
+  //   setDescription(event.target.value)
 
-    console.log(description)
-  }
+  //   console.log(description)
+  // }
 
+  console.log(description)
   return (
     <div className={styles.container}>
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
@@ -157,11 +158,11 @@ export function HomeContainer() {
           required
           className={setNewVehicle == undefined ? styles.errorMessage : ''}
         />
-        <select onChange={selectOptions} value={description} name="description">
-          <option value="search">Pesquisar por</option>
-          <option value="plate">Placa</option>
-          <option value="name">Nome</option>
-          <option value="date">Data</option>
+        <select onChange={e => setDescription(e.target.value)} value={description} name="description">
+          <option>Pesquisar por</option>
+          <option>Placa</option>
+          <option>Nome</option>
+          <option>Data</option>
         </select>
         <button type="submit">
           Adicionar <PlusCircle />
