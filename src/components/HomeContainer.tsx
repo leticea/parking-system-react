@@ -139,12 +139,12 @@ export function HomeContainer() {
   }, [newVehicle == ""]);
 
   function selectOptions(event: FormEvent) {
+    event.preventDefault();
+
     setDescription(event.target.value)
 
     console.log(description)
   }
-
-
 
   return (
     <div className={styles.container}>
