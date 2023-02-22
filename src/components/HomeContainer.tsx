@@ -146,9 +146,9 @@ export function HomeContainer() {
           value={newVehicle}
           onChange={updateNewVehicleValue}
           required
-          className={!setNewVehicle ? styles.errorMessage : ''}
+          className={setNewVehicle == undefined ? styles.errorMessage : ''}
         />
-        <select>
+        <select name="description" id="description">
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
           <option value="name">Nome</option>
@@ -183,4 +183,6 @@ export function HomeContainer() {
       </div>
     </div>
   );
+
+  console.log(option.name)
 }
