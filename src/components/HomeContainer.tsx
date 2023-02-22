@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, SelectHTMLAttributes, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { RegisteredVehicle } from "./RegisteredVehicle";
@@ -80,6 +80,8 @@ export function HomeContainer() {
 
   const [errorMessage] = useState("Preencha no formato correto.");
 
+  const [description, setDescription] = useState("");
+
   function handleInsertNewVehicle(event: FormEvent) {
     event.preventDefault();
 
@@ -136,6 +138,12 @@ export function HomeContainer() {
     setVehicles(vehiclesDB);
   }, [newVehicle == ""]);
 
+  function selectOptions(event: SelectHTMLAttributes<HTMLSelectElement>) {
+    setDescription(select.option.name)
+  }
+
+  console.log(setDescription)
+
   return (
     <div className={styles.container}>
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
@@ -148,7 +156,7 @@ export function HomeContainer() {
           required
           className={setNewVehicle == undefined ? styles.errorMessage : ''}
         />
-        <select name="description" id="description">
+        <select value={description} name="description" id="description">
           <option value="search">Pesquisar por</option>
           <option value="plate">Placa</option>
           <option value="name">Nome</option>
@@ -183,6 +191,4 @@ export function HomeContainer() {
       </div>
     </div>
   );
-
-  console.log(option.name)
 }
