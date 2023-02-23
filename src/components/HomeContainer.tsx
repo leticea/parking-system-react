@@ -146,6 +146,7 @@ export function HomeContainer() {
   // }
 
   console.log(description)
+
   return (
     <div className={styles.container}>
       <form className={styles.formContainer} onSubmit={handleInsertNewVehicle}>
@@ -160,9 +161,9 @@ export function HomeContainer() {
         />
         <select onChange={e => setDescription(e.target.value)} value={description} name="description">
           <option>Pesquisar por</option>
-          <option>Placa</option>
-          <option>Nome</option>
-          <option>Data</option>
+          <option value="plate">Placa</option>
+          <option value="name">Nome</option>
+          <option value="date">Data</option>
         </select>
         <button type="submit">
           Adicionar <PlusCircle />
